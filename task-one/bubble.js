@@ -4,7 +4,7 @@
 
 function bubble (arr) {
 	for (let i = 0; i < arr.length - 1; i++) {
-		for (let j = i + 1; j < arr.length; j++) {
+		for (let j = i + 1; j < arr.length; j++) {  // 每次把最小数的放到最左边
 			if (arr[i] > arr[j]) {
 				[ arr[i], arr[j] ] = [ arr[j], arr[i] ]
 			}
