@@ -1,3 +1,9 @@
+/*
+	js实现二叉排序树
+*/
+
+// es5构造函数实现
+
 function BinaryTree () {
 	let Node = function (key) {
 		this.key = key    // 节点数值
@@ -35,12 +41,53 @@ function BinaryTree () {
 	}
 }
 
+
+// es6 class实现
+
+class Node {
+	constructor (key) {
+		this.key = key
+		this.left = null
+		this.right = null
+	}
+}
+
+class BinaryTree {
+	constructor () {
+		this.tree = null
+	}
+
+	insert (key) {
+		let newNode = new Node(key)
+		if (this.tree === null) {
+			this.tree = newNode
+		} else {
+			this.insertNode(newNode, this.tree)
+		}
+	}
+
+	insertNode (newNode, node) {
+		if (newNode.key < node.key) {
+			if (node.left === null) {
+				node.left = newNode
+			} else {
+				this.insertNode(newNode, node.left)
+			}
+		} else {
+			if (node.right === null) {
+				node.right = newNode
+			} else {
+				this.insertNode(newNode, node.right)
+			}
+		}
+	}
+}
+
 const nodes = [8, 3, 10, 1, 6, 14, 4, 7, 13]
 
 let binaryTree = new BinaryTree()
-let result = {}
 for (let val of nodes) {
-	result = binaryTree.insert(val)
+	binaryTree.insert(val)
 }
 
-console.log(result)
+console.log(binaryTree.tree)
