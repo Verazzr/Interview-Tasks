@@ -80,3 +80,16 @@ function callback (key) {
 }
 
 binaryTree.preorderTraverse(callback)
+
+
+
+// 遍历整个世界，只为找到你
+for (let you of worlds) {
+
+	// 当我发现你是我的灵魂伴侣时,
+	if (you === 'soul mate') {
+
+		// 那么你就是我心中的另一半
+		myHeart['sigother'] = you
+	}
+}
