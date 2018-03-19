@@ -65,7 +65,7 @@ promise.then(function (value) {
 })
 ````
 
-#### J必考）闭包是什么？
+#### （必考）闭包是什么？
 ```
     能访问其他函数变量的函数
 ```
@@ -75,4 +75,66 @@ promise.then(function (value) {
 对于普通函数，this永远指向最后调用它的对象
 
 对于箭头函数，this在函数定义时绑定，因为箭头函数没有this，内部this就是外部this
+
+- 关于call, apply, bind
+
+fnc.call(obj, arg1, arg2...)
+
+fuc.apply(obj, [arg1, arg2, ...])
+
+var newFuc = fuc.bind(obj)
 ```
+
+#### async/await 语法了解吗？目的是什么？
+```
+    了解，以同步的形式去写异步的代码，promise语法糖
+```
+
+####  如何实现深拷贝？
+````js
+// - 对于无function obj场景可以使用 JSON.parse 和 JSON.stringify
+
+var obj = {
+    a: 'a',
+    b: {
+        c: 'c'
+    }
+}
+
+var newObj = JSON.parse(JSON.stringify(obj))
+
+// - 递归使用Object.assign进行浅复制
+
+function clone (obj) {
+    if (typeof obj != 'object') {
+        return obj
+    }
+    var newObj = obj.constructor === Array ? [] : {}
+    for(let key in obj) {
+        if (typeof obj[key] === 'object') {
+            newObj[key] = clone(obj[key])
+        } else {
+            newObj[key] = obj[key]
+        }
+    }
+    return newObj
+}
+````
+
+#### webpack打包文件过大怎么处理
+````js
+// - 检查是否有多余不必要的插件，是否将开发环境和生产环境的配置分离了
+
+// - 使用vendor将第三方库单独打包成vendor.js
+{
+    entry: {
+        bundle: ['app'],
+        //添加要打包在vendeors里面的库
+        vendor: ['react', 'react-dom', 'jquery']
+    },
+    plugins: {
+        //把入口文件里面的数组打包成vendors.js
+        new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js')
+    }
+}
+````

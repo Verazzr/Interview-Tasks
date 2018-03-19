@@ -12,6 +12,7 @@ function ajax (options) {
 	const { url, methods, data } = options
 
 	return new Promise((resolve, reject) => {
+		const xhr = new XMLHtppRequest()
 		xhr.open(method, url)
 		xhr.send(data)
 
