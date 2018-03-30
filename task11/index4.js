@@ -22,7 +22,7 @@ function groupList(list) {
 			}
 
 			for (let i=0; i<arr.length; i++) {
-				if (arr[i].type === val.type) {
+				if (arr[i].type === val.type && arr[i].content != val.content) {
 					arr[i].content.push(val.content)
 				}
 			}

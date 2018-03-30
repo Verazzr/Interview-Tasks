@@ -1,0 +1,41 @@
+Arguments: 
+  /Users/yang/.nvm/versions/node/v8.4.0/bin/node /Users/yang/.nvm/versions/node/v8.4.0/bin/yarn add loadsh
+
+PATH: 
+  /Users/yang/.nvm/versions/node/v8.4.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.5.1
+
+Node version: 
+  8.4.0
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "task11",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: No valid versions found for "loadsh". The package may be unpublished.
+      at new MessageError (/Users/yang/.nvm/versions/node/v8.4.0/lib/node_modules/yarn/lib/cli.js:186:110)
+      at Function.<anonymous> (/Users/yang/.nvm/versions/node/v8.4.0/lib/node_modules/yarn/lib/cli.js:51415:15)
+      at Generator.next (<anonymous>)
+      at step (/Users/yang/.nvm/versions/node/v8.4.0/lib/node_modules/yarn/lib/cli.js:98:30)
+      at /Users/yang/.nvm/versions/node/v8.4.0/lib/node_modules/yarn/lib/cli.js:116:14
+      at Promise (<anonymous>)
+      at F (/Users/yang/.nvm/versions/node/v8.4.0/lib/node_modules/yarn/lib/cli.js:23451:28)
+      at Function.<anonymous> (/Users/yang/.nvm/versions/node/v8.4.0/lib/node_modules/yarn/lib/cli.js:95:12)
+      at Function.findVersionInRegistryResponse (/Users/yang/.nvm/versions/node/v8.4.0/lib/node_modules/yarn/lib/cli.js:51461:19)
+      at NpmResolver.<anonymous> (/Users/yang/.nvm/versions/node/v8.4.0/lib/node_modules/yarn/lib/cli.js:51479:28)
